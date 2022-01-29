@@ -1,0 +1,14 @@
+ {
+			"wait" : "On proccess ",
+			"success" : "Berhasil!",
+			"wrongFormat" : "Format salah, coba liat lagi di menu",
+			"banned" : "Maaf anda telah terbanned [❗]",
+			"error" : {
+				"stick" : "bukan sticker itu:v",
+				"Iv" : "Linknya error:v"
+			},
+			"only" : {
+				"group" : "Khusus grup ngab",
+				"ownerb" : "maaf fitur ini khusus OWNER [!]"
+			}
+		}
