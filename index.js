@@ -1913,7 +1913,7 @@ client.updatePresence(from, Presence.composing)
 			client.sendMessage(from, teks, text,{quoted:brc,detectLinks: false})                        
             })              
 			break
-    case 'ig':
+ /*   case 'ig':
       case 'igdl':
         if (!q) return reply('link ignya mana?')
 	    hx.igdl(q)
@@ -1928,13 +1928,14 @@ client.updatePresence(from, Presence.composing)
                 }
             }
             });
-	    break
-	   case 'igdl2':
+	    break 
+*/
+	   case 'igdl':
 	     try{
 	     if (!q) return reply('link ignya ndi lur?')
-	     bopper = await fetchJson(`https://velgrynd.herokuapp.com/api/igdl?url=${q}&apikey=${VelApi}`)
+	     bopper = await fetchJson(`https://zekais-api.herokuapp.com/igdl2?url=${q}&apikey=${Zekais}`)
 	     resil = bopper.result
-	     for(let x of resil.medias){
+	     for(let x of resil){
                 if(x.type == 'video'){
                     let link = await getBuffer(x.url)
                     client.sendMessage(from,link,video,{quoted: brc,caption: `Type : ${x.type}`})
@@ -1948,25 +1949,22 @@ client.updatePresence(from, Presence.composing)
 	       reply(`${e}`)
 	     }
 	     break
-	 case 'igdl3': 
-	   try{
+
+	/* case 'igvid': 
+	   try {
 	   if (isBanned) return reply(mess.banned)
 	   if (!q) return reply(`contoh: ${prefix + command} https://www.instagram.com/reel/CXvVDW8AaaV/?utm_medium=copy_link`)
-	   ape = await fetchJson(`https://api.dapuhy.xyz/api/socialmedia/igdownload?url=${q}&apikey=${DapKey}`)
-	   rss = ape.result
-	     if (rss.fileType == mp4){
-	       let pidi = await getBuffer(rss.url)
-	       client.sendMessage(from, pidi, video, {quoted: brc, caption: `Type: ${rss.fileType}`})
-	     } else {
-	       let imji = await getBuffer(rss.url)
-	       client.sendMessage(from, imji, image, {quoted: brc, caption: `Type: ${rss.fileType}`})
-	     }
+	   ape = await fetchJson(`https://zekais-api.herokuapp.com/igdl2?url=${q}&apikey=${Zekais}`)
+		 apoy = await getBuffer(ape)	
+		   client.sendMessage(from, apoy, video, {quoted: brc, caption: 'nih bwang'})
 	   } catch (e) {
 	     console.log(color(e, 'red')) 
 	     reply(`${e}`)
 	   }
 	   break
-	   case 'igstory': 
+	   */
+
+		case 'igstory': 
             if(!q) return reply('Usernamenya?')
             hx.igstory(q)
             .then(async result => {
